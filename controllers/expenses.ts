@@ -45,3 +45,14 @@ export const createExpense = async(req: Request, res: Response) =>{
         msg: "El gasto quedo acentado"
     })
 }
+
+    export const deleteExpense = async (req: Request, res: Response) => {
+        const { tipo } = req.params;
+    
+        const expenses = await Expenses.findOneAndDelete({tipo:tipo});
+
+        res.json({
+            expenses
+        })
+    }
+
