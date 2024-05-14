@@ -52,7 +52,7 @@ export const createExpense = async(req: Request, res: Response) =>{
         const expenses = await Expenses.findOneAndDelete({tipo:tipo});
 
         res.json({
-            expenses
+                expenses
         })
     }
 
